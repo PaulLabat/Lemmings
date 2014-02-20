@@ -1,0 +1,317 @@
+<?xml version ="1.0"?><Jeu><Fenetre objectif ="50" nbLemmings ="10" tempsMax ="5"/>
+<ListeComportements><Comportement nature ="base"><Automate type ="1"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="atterir"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isMortel"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="MARCHER" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="parapluie"><Automate type ="2"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="atterir"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="grimpeur"><Automate type ="3"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="GRIMPE" action ="grimper"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isBloqueur"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="atterir"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isMortel"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="GRIMPE" etat_suiv ="GRIMPE" action ="grimper"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="GRIMPE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="hautMap"/>
+<Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="GRIMPE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isCorniche"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="bloqueur"><Automate type ="4"><Transition etat_init ="BLOQUE" etat_suiv ="BLOQUE" action ="bloquer"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="BLOQUE" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="isVide"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="creuserH"><Automate type ="5"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finH"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="CREUSEH" action ="creuserH"><Condition valeur ="isObstacle"/>
+<Condition valeur ="isSol"/>
+<Condition valeur ="isCreusableH"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="atterir"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isMortel"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="CREUSEH" etat_suiv ="MARCHE" action ="creuserH"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="CREUSEH" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finH"/>
+</Transition>
+<Transition etat_init ="CREUSEH" etat_suiv ="CREUSEH" action ="creuserH"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="creuserV"><Automate type ="6"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finV"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="CREUSEV" action ="creuserV"><Condition valeur ="isSol"/>
+<Condition valeur ="isCreusableV"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="atterir"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isMortel"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="CREUSEV" etat_suiv ="TOMBE" action ="creuserV"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="CREUSEV" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finV"/>
+</Transition>
+<Transition etat_init ="CREUSEV" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finV"/>
+</Transition>
+<Transition etat_init ="CREUSEV" etat_suiv ="CREUSEV" action ="creuserV"><Condition valeur ="isSol"/>
+<Condition valeur ="isCreusableV"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="creuserD"><Automate type ="7"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finD"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="CREUSED" action ="creuserD"><Condition valeur ="isSol"/>
+<Condition valeur ="isCreusableD"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="mourir"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="atterir"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isMortel"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="CREUSED" etat_suiv ="MARCHE" action ="creuserD"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="CREUSED" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finD"/>
+</Transition>
+<Transition etat_init ="CREUSED" etat_suiv ="CREUSED" action ="creuserD"><Condition valeur ="isSol"/>
+<Condition valeur ="isCreusableD"/>
+</Transition>
+<Transition etat_init ="ROTATION" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+</Automate>
+</Comportement><Comportement nature ="escalier"><Automate type ="8"><Transition etat_init ="MARCHE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="ROTATION" action ="tourner"><Condition valeur ="isObstacle"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="CONSTRUIT" action ="construire"><Condition valeur ="isSol"/>
+<Condition valeur ="isEsca"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MARCHE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isEau"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MARCHE" action ="marcher"><Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="TOMBE" action ="tomber"><Condition valeur ="isVide"/>
+</Transition>
+<Transition etat_init ="TOMBE" etat_suiv ="MORT" action ="mourir"><Condition valeur ="isMortel"/>
+<Condition valeur ="isSol"/>
+</Transition>
+<Transition etat_init ="CONSTRUIT" etat_suiv ="CONSTRUIT" action ="construire"><Condition valeur ="isSol"/>
+<Condition valeur ="isEsca"/>
+</Transition>
+<Transition etat_init ="CONSTRUIT" etat_suiv ="CONSTRUIT" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="CONSTRUIT" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finE"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="MONTE" action ="monter"><Condition valeur ="isEscalier"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="CONSTRUIT" action ="construire"><Condition valeur ="isSol"/>
+<Condition valeur ="isEsca"/>
+</Transition>
+<Transition etat_init ="MONTE" etat_suiv ="RETOUR" action ="retourner"><Condition valeur ="finE"/>
+</Transition>
+</Automate>
+</Comportement></ListeComportements><map><Bloc type ="6" coordx ="0" coordy ="0" sens ="horizontal" taille ="128"/>
+<Bloc type ="6" coordx ="54" coordy ="0" sens ="horizontal" taille ="128"/>
+<Bloc type ="6" coordx ="0" coordy ="0" sens ="vertical" taille ="55"/>
+<Bloc type ="6" coordx ="0" coordy ="127" sens ="vertical" taille ="55"/>
+<Bloc type ="2" coordx ="6" coordy ="1" sens ="horizontal" taille ="20"/>
+<Bloc type ="2" coordx ="7" coordy ="1" sens ="horizontal" taille ="20"/>
+<Bloc type ="2" coordx ="8" coordy ="1" sens ="horizontal" taille ="20"/>
+<Bloc type ="4" coordx ="5" coordy ="9" sens ="horizontal" taille ="1"/>
+<Bloc type ="4" coordx ="4" coordy ="10" sens ="vertical" taille ="1"/>
+<Bloc type ="4" coordx ="5" coordy ="10" sens ="horizontal" taille ="1"/>
+<Bloc type ="4" coordx ="5" coordy ="11" sens ="horizontal" taille ="1"/>
+<Bloc type ="9" coordx ="45" coordy ="126" sens ="vertical" taille ="4"/>
+<Bloc type ="8" coordx ="1" coordy ="2" sens ="vertical" taille ="5"/>
+<Bloc type ="8" coordx ="5" coordy ="125" sens ="vertical" taille ="5"/>
+<Bloc type ="6" coordx ="9" coordy ="19" sens ="vertical" taille ="4"/>
+<Bloc type ="2" coordx ="12" coordy ="19" sens ="horizontal" taille ="32"/>
+<Bloc type ="2" coordx ="13" coordy ="19" sens ="horizontal" taille ="32"/>
+<Bloc type ="2" coordx ="7" coordy ="46" sens ="vertical" taille ="6"/>
+<Bloc type ="2" coordx ="7" coordy ="47" sens ="vertical" taille ="6"/>
+<Bloc type ="2" coordx ="7" coordy ="48" sens ="vertical" taille ="6"/>
+<Bloc type ="2" coordx ="7" coordy ="49" sens ="vertical" taille ="6"/>
+<Bloc type ="2" coordx ="7" coordy ="50" sens ="vertical" taille ="10"/>
+<Bloc type ="2" coordx ="7" coordy ="51" sens ="vertical" taille ="10"/>
+<Bloc type ="2" coordx ="7" coordy ="52" sens ="vertical" taille ="10"/>
+<Bloc type ="2" coordx ="7" coordy ="53" sens ="vertical" taille ="10"/>
+<Bloc type ="2" coordx ="7" coordy ="54" sens ="vertical" taille ="10"/>
+<Bloc type ="2" coordx ="14" coordy ="21" sens ="horizontal" taille ="29"/>
+<Bloc type ="2" coordx ="15" coordy ="23" sens ="horizontal" taille ="27"/>
+<Bloc type ="2" coordx ="16" coordy ="25" sens ="horizontal" taille ="25"/>
+<Bloc type ="2" coordx ="7" coordy ="60" sens ="vertical" taille ="19"/>
+<Bloc type ="2" coordx ="7" coordy ="61" sens ="vertical" taille ="19"/>
+<Bloc type ="2" coordx ="7" coordy ="62" sens ="vertical" taille ="19"/>
+<Bloc type ="6" coordx ="7" coordy ="63" sens ="vertical" taille ="19"/>
+<Bloc type ="2" coordx ="23" coordy ="47" sens ="horizontal" taille ="13"/>
+<Bloc type ="3" coordx ="23" coordy ="43" sens ="horizontal" taille ="4"/>
+<Bloc type ="2" coordx ="23" coordy ="12" sens ="horizontal" taille ="31"/>
+<Bloc type ="2" coordx ="24" coordy ="47" sens ="horizontal" taille ="13"/>
+<Bloc type ="3" coordx ="24" coordy ="43" sens ="horizontal" taille ="4"/>
+<Bloc type ="2" coordx ="24" coordy ="12" sens ="horizontal" taille ="31"/>
+<Bloc type ="2" coordx ="25" coordy ="12" sens ="horizontal" taille ="49"/>
+<Bloc type ="6" coordx ="21" coordy ="12" sens ="vertical" taille ="2"/>
+<Bloc type ="6" coordx ="21" coordy ="13" sens ="vertical" taille ="2"/>
+<Bloc type ="6" coordx ="26" coordy ="26" sens ="horizontal" taille ="38"/>
+<Bloc type ="2" coordx ="30" coordy ="1" sens ="horizontal" taille ="25"/>
+<Bloc type ="2" coordx ="31" coordy ="1" sens ="horizontal" taille ="24"/>
+<Bloc type ="2" coordx ="32" coordy ="1" sens ="horizontal" taille ="23"/>
+<Bloc type ="2" coordx ="33" coordy ="1" sens ="horizontal" taille ="22"/>
+<Bloc type ="2" coordx ="34" coordy ="1" sens ="horizontal" taille ="21"/>
+<Bloc type ="2" coordx ="35" coordy ="1" sens ="horizontal" taille ="20"/>
+<Bloc type ="6" coordx ="28" coordy ="24" sens ="vertical" taille ="2"/>
+<Bloc type ="6" coordx ="28" coordy ="25" sens ="vertical" taille ="2"/>
+<Bloc type ="2" coordx ="53" coordy ="40" sens ="horizontal" taille ="87"/>
+<Bloc type ="2" coordx ="52" coordy ="41" sens ="horizontal" taille ="86"/>
+<Bloc type ="2" coordx ="51" coordy ="42" sens ="horizontal" taille ="85"/>
+<Bloc type ="2" coordx ="50" coordy ="43" sens ="horizontal" taille ="84"/>
+<Bloc type ="2" coordx ="49" coordy ="44" sens ="horizontal" taille ="83"/>
+<Bloc type ="3" coordx ="51" coordy ="51" sens ="horizontal" taille ="69"/>
+<Bloc type ="3" coordx ="50" coordy ="52" sens ="horizontal" taille ="67"/>
+<Bloc type ="3" coordx ="52" coordy ="52" sens ="horizontal" taille ="67"/>
+<Bloc type ="2" coordx ="10" coordy ="110" sens ="horizontal" taille ="17"/>
+<Bloc type ="2" coordx ="11" coordy ="110" sens ="horizontal" taille ="17"/>
+<Bloc type ="2" coordx ="12" coordy ="110" sens ="horizontal" taille ="17"/>
+<Bloc type ="2" coordx ="3" coordy ="100" sens ="vertical" taille ="17"/>
+<Bloc type ="2" coordx ="3" coordy ="101" sens ="vertical" taille ="17"/>
+<Bloc type ="6" coordx ="2" coordy ="99" sens ="vertical" taille ="19"/>
+<Bloc type ="2" coordx ="2" coordy ="102" sens ="vertical" taille ="19"/>
+<Bloc type ="2" coordx ="2" coordy ="100" sens ="horizontal" taille ="2"/>
+<Bloc type ="6" coordx ="20" coordy ="100" sens ="horizontal" taille ="2"/>
+<Bloc type ="2" coordx ="28" coordy ="117" sens ="horizontal" taille ="10"/>
+<Bloc type ="2" coordx ="29" coordy ="115" sens ="horizontal" taille ="12"/>
+<Bloc type ="2" coordx ="30" coordy ="113" sens ="horizontal" taille ="14"/>
+<Bloc type ="2" coordx ="31" coordy ="111" sens ="horizontal" taille ="16"/>
+<Bloc type ="2" coordx ="32" coordy ="109" sens ="horizontal" taille ="18"/>
+<Bloc type ="2" coordx ="33" coordy ="107" sens ="horizontal" taille ="20"/>
+<Bloc type ="2" coordx ="34" coordy ="105" sens ="horizontal" taille ="22"/>
+</map><ListeBoutons><Bouton nom ="parapluie" nombre ="10"/>
+<Bouton nom ="grimpeur" nombre ="10"/>
+<Bouton nom ="bloqueur" nombre ="10"/>
+<Bouton nom ="creuseurH" nombre ="10"/>
+<Bouton nom ="creuseurV" nombre ="10"/>
+<Bouton nom ="creuseurD" nombre ="10"/>
+<Bouton nom ="Escalier" nombre ="10"/>
+<Bouton nom ="Luciolle" nombre ="10"/>
+<Bouton nom ="supp" nombre ="10"/>
+</ListeBoutons></Jeu>
